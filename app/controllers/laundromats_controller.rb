@@ -1,9 +1,9 @@
 class LaundromatsController < ApplicationController
     
     def index
-        #byebug
-        @laundromats = Laundromat.all #find(zipcode: params["zipcode"]) 
-        
+    
+        @laundromats = Laundromat.find_by(zipcode: params[:zipcode]) 
+        # byebug
    
     end
     

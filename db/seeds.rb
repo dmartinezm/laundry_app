@@ -13,6 +13,7 @@ customer3 = Customer.create(name: "Raq", zipcode: '11223' , email: 'raq@gmail.co
 laund1 = Laundromat.create(name: 'Bedstuy Best Wash', zipcode: '11221', email: 'bbw@gmail.com' , password: '0000', cost: 1.75 )
 laund2 = Laundromat.create(name: 'We Wash 4 U', zipcode: '11223', email: 'ww@gmail.com' , password: '7777', cost: 1.50 )
 laund3 = Laundromat.create(name: ' Dumbo Wash n Fold', zipcode: '11223', email: 'dwf@gmail.com' , password: '888', cost: 2.00)
+laund4 = Laundromat.create(name: 'Best Wash', zipcode: '11221', email: 'bbw2@gmail.com' , password: '0000', cost: 1.75 )
 
 employee1 = Employee.create(name: 'Yuri', laundromat: laund2)
 employee2 = Employee.create(name: 'Paul', laundromat: laund1)
