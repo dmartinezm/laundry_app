@@ -1,0 +1,7 @@
+<h1>Welcome <%= @customer.name %></h1>
+
+<h4> Search by Zipcode</h4>
+<%= form_tag(laundromats_path, method: :get) do %>
+<%= text_field_tag(:zipcode, params[:zipcode]) %>
+<%= submit_tag ("Search") %>
+<%end %>
