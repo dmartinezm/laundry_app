@@ -7,6 +7,13 @@ body {
   background-image: url('https://westbankdrycleaning.com/wp-content/uploads/2019/06/Laundry-768x538.jpg');
 }
 </style>
+
+<h4> Search by Zipcode</h4>
+<%= form_tag(laundromats_path, method: :get) do %>
+<%= text_field_tag(:zipcode, params[:zipcode]) %>
+<%= submit_tag ("Search") %>
+<%end %>
+
 <%# form_for @laundromats do |f| %>
 <%# f.label :zipcode %>
 <%# f.text_field :zipcode %>

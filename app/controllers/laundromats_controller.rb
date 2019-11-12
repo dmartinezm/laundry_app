@@ -1,7 +1,18 @@
 class LaundromatsController < ApplicationController
-    def show
-        @laundromats = Laundromat.all.select {|laundromat| laundromat.zipcode = params[:zipcode]}
+    
+    def index
+        #byebug
+        @laundromats = Laundromat.all #find(zipcode: params["zipcode"]) 
+        
+   
     end
+    
+    def show
+        @laundromat = Laundromat.find(params[:id])
+        
+    end
+
+   
 
     def new
     end
