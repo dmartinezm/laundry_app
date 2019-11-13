@@ -5,6 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Customer.destroy_all 
+Laundromat.destroy_all 
+Employee.destroy_all 
+Order.destroy_all 
+
 customer1 = Customer.create(name: "Steve", zipcode: '11221', email: 'steve@gmail.com', password: '1234')
 customer2 = Customer.create(name: "Diego", zipcode: '11224', email: 'diego@gmail.com', password: '1111')
 customer3 = Customer.create(name: "Raq", zipcode: '11223' , email: 'raq@gmail.com', password: '2222')

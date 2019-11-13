@@ -1,0 +1,5 @@
+<h1> Here are the laundromats nearby </h1>
+
+<% @laundromats.each do |laundromat| %>
+<li><%= link_to laundromat.name, laundromat %></li>
+<% end %>

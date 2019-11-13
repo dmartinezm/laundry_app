@@ -9,9 +9,9 @@ body {
 </style>
 
 <h4> Search by Zipcode</h4>
-<%= form_tag(laundromats_path, method: :get) do %>
-<%= text_field_tag(:zipcode, params[:zipcode]) %>
-<%= submit_tag ("Search") %>
+<%= form_tag(laundromats_search_path, method: :get) do %>
+<%= text_field_tag :zipcode, params[:zipcode] %>
+<%= submit_tag 'Search', name: nil %>
 <%end %>
 
 <%# form_for @laundromats do |f| %>
