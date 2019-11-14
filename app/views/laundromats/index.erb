@@ -1,6 +1,16 @@
-<h1> Here are the laundromats nearby </h1>
+<h1> Here are the laundromats around </h1>
 
-<%= @laundromats.each do |laundromat| %>
+
+<h4> Search by Zipcode</h4>
+<%= form_tag(laundromats_path, method: :get) do %>
+<%= text_field_tag(:zipcode, params[:zipcode]) %>
+<%= submit_tag "Search", name: nil %>
+<%end %>
+
+<hr>
+
+<% @laundromats.each do |laundromat| %>
 <li><%= link_to laundromat.name, laundromat %></li>
 <% end %>
+
 
