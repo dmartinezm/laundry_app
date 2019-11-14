@@ -14,6 +14,9 @@ class LaundromatsController < ApplicationController
     
     def show
         @laundromat = Laundromat.find(params[:id])
+
+        @order= Order.new
+
     end
 
     def new
@@ -37,8 +40,9 @@ class LaundromatsController < ApplicationController
     private
 
     def set_laundromat
-        byebug
-        @laundromat = Laundromat.find(params[:laundromat_id])
+#         @laundromat = Laundromat.find(params[:laundromat_id])
+        @laundromat = Laundromat.find(params[:id])
+
     end
 
     def laundromat_params
