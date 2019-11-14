@@ -3,20 +3,26 @@ cost per load: $<%= @laundromat.cost%>
 
 <br><br>
 
-<%= button_to 'Back', laundromats_search_path, method: :get  %>
-<!-- <%= link_to 'Back to Results', session[:search_results] %> -->
-<%# <%= button_to 'Back',:back %> 
-<%# <%= link_to 'Back', :back 
 
-<%# <%= link_to ‘Back’, request.headers[‘HTTP_REFERER’] %> 
+<%= link_to 'Back to Results', session[:search_results] %> 
+
+<br><br>
+
 <br>
 
+<h3> Request Service</h3>
 
 <%= form_for @order do |f| %>
 
-<%= f.hidden_field :laundromat %>
+
 <%= f.label :customer %>
 <%= f.number_field :customer_id %><br>
+
+<%= f.label :employee%>
+<%= f.hidden_field :employee_id, value: 4 %><br>
+
+<%= f.label :laundromat %>
+<%= f.number_field :laundromat_id, value: params[:id] %><br>
 
 
 <%= f.label :order_type %>
