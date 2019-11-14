@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   # get "/laundromat_signup", to: "laundromats#new", as: "laundromat_signup"
 
   get "/customer_login", to: "sessions#new_customer", as: "customer_login"
-  # post "/customer_login", to: "sessions#create_customer"
+  post "/customer_login", to: "sessions#create_customer"
   
   # get "/laundromat_login", to: "sessions#new_laundromat", as: "laundromat_login"
   # post "/laundromat_login", to: "sessions#create_laundromat"
