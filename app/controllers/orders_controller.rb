@@ -9,7 +9,8 @@ class OrdersController < ApplicationController
 
     def create
         order = Order.create(order_params)
-        redirect_to "customers/#{params[:customer_id]}"
+        byebug
+        redirect_to customer_path(params["order"]["customer_id"])
     end
 
 
