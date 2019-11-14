@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
  
   root 'welcome#index'
-  resources :orders
+  resources :orders, only:[:new, :create, :show]
   resources :employees, only: [:show]
   resources :laundromats , only: [:show, :new, :create, :index]
   resources :customers
