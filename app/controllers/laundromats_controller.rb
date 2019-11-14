@@ -1,23 +1,22 @@
 class LaundromatsController < ApplicationController
-    before_action :set_laundromat, only: [:show]
-    # def search
-    #     if params[:zipcode]
-    #         # byebug
-    #         @laundromats = Laundromat.where(zipcode: params[:zipcode]).order("name")
-    #     else
-    #         # byebug
-    #         @laundromats = Laundromat.all
-    #     end
-    # end
+    # before_action :set_laundromat, only: [:show]
 
     def index
-        # @laundromats = Laundromat.find_by(zipcode: params[:zipcode]) 
-   
+        if params[:zipcode]
+            session[:search_results] = request.url
+            @laundromats = Laundromat.where(zipcode: params[:zipcode]).order("name")
+            # byebug
+        else
+           
+            @laundromats = Laundromat.all
+        end
     end
     
     def show
         @laundromat = Laundromat.find(params[:id])
+
         @order= Order.new
+
     end
 
     def new
@@ -41,7 +40,9 @@ class LaundromatsController < ApplicationController
     private
 
     def set_laundromat
+#         @laundromat = Laundromat.find(params[:laundromat_id])
         @laundromat = Laundromat.find(params[:id])
+
     end
 
     def laundromat_params

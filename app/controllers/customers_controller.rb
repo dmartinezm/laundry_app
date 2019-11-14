@@ -1,7 +1,12 @@
 class CustomersController < ApplicationController
+    before_action :set_customer, only: [:show]
 
     def show
-        @customer = Customer.find(params[:id])
+        
+        @orders = @customer.orders
+        @laundromats = @customer.laundromats
+        
+        # byebug
     end
     
     def new
@@ -23,6 +28,11 @@ class CustomersController < ApplicationController
     end
 
     private
+
+    def set_customer
+        @customer = Customer.find(4)
+        # @customer = Customer.find(params[:id])
+    end
 
     def customer_params
         params.require(:customer).permit(:name, :zipcode, :email, :password)

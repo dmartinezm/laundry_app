@@ -1,8 +1,10 @@
 <h1> <%= @laundromat.name%> </h1>
 cost per load: $<%= @laundromat.cost%>
 
+<br><br>
 
 <%= button_to 'Back', laundromats_search_path, method: :get  %>
+<!-- <%= link_to 'Back to Results', session[:search_results] %> -->
 <%# <%= button_to 'Back',:back %> 
 <%# <%= link_to 'Back', :back 
 
@@ -23,3 +25,4 @@ cost per load: $<%= @laundromat.cost%>
 <%= f.number_field :loads %><br>
 <%= f.submit %>
 <% end %>
+
