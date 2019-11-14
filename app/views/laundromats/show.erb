@@ -10,19 +10,19 @@ cost per load: $<%= @laundromat.cost%>
 
 <br>
 
-<h3> Request Service</h3>
+<h3> Submit New Request Service</h3>
 
 <%= form_for @order do |f| %>
 
 
 <%= f.label :customer %>
-<%= f.number_field :customer_id %><br>
+<%= f.number_field :customer_id,  disabled: false, value: session[:customer_id] %><br>
 
-<%= f.label :employee%>
-<%= f.hidden_field :employee_id, value: 4 %><br>
+<%=f.label :employee%>
+<%= f.number_field :employee_id, disabled: false, value: 4 %><br>
 
 <%= f.label :laundromat %>
-<%= f.number_field :laundromat_id, value: params[:id] %><br>
+<%=f.number_field :laundromat_id, disabled: false, value: params[:id] %><br>
 
 
 <%= f.label :order_type %>

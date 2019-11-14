@@ -8,9 +8,17 @@ class OrdersController < ApplicationController
     end
 
     def create
-        order = Order.create(order_params)
+        # customer_id = session[:customer_id]
+        # laundromat_id = params[:order][:laundromat_id]
+        # employee_id = 4
+        # order_type = params[:order][:order_type]
+        # loads = params[:order][:loads]
         byebug
-        redirect_to customer_path(params["order"]["customer_id"])
+
+        order = Order.create(order_params)
+        
+       
+        redirect_to customer_path(session[:customer_id])
     end
 
 

@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
-    # skip_before_action :authorized_customer, only: [:new, :create]
-    # skip_before_action :authorized_laundromat, only: [:new, :create]
+    #skip_before_action :authorized_customer, only: [:new, :create]
+    #skip_before_action :authorized_laundromat, only: [:new, :create]
 
     def new_customer
         # render :new
@@ -20,8 +20,9 @@ class SessionsController < ApplicationController
             session[:customer_id] = customer.id
             redirect_to customer
         else
-            flash[:errors] = customer.errors.full_messages
-            redirect_to login_path
+            #byebug
+            flash[:errors] = "Does not exist"
+            redirect_to customer_login_path
         end
     end
 

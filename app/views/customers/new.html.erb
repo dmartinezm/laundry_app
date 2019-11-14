@@ -1,5 +1,14 @@
 <h1> New Customer</h1>
-
+ <% if flash[:errors] %>
+    <ol class="messages">
+      <% flash[:errors].each do |error| %>
+        <li>
+          <%= error %>
+        </li>
+      <% end %>
+    </ol>
+  <% end %>
+  
 <%= form_for @customer do |f|%>
   <%= f.label :name %> <br>
   <%= f.text_field :name %><br>
@@ -13,15 +22,7 @@
   <%= f.label :zipcode %><br>
   <%= f.text_field :zipcode %><br>
   
-  <% if flash[:errors] %>
-    <ol class="messages">
-      <% flash[:errors].each do |error| %>
-        <li>
-          <%= error %>
-        </li>
-      <% end %>
-    </ol>
-  <% end %>
+ 
   <br><br>
   <%= f.submit %>
 
