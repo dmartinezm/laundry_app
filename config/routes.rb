@@ -2,7 +2,7 @@ Rails.application.routes.draw do
  
   root 'welcome#index'
 
-  resources :orders, only:[:new, :create, :show]
+  resources :orders, only:[:new, :create, :show,:destroy]
   resources :employees, only: [:show]
   resources :laundromats, only: [:show,:new,:create,:index]
   resources :customers, only: [:show,:new,:create]

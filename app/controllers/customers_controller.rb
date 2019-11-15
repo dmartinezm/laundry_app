@@ -2,12 +2,13 @@ class CustomersController < ApplicationController
     before_action :set_customer, only: [:show]
 
     def show
-        unless session[:customer_id] == @customer.id
+        # unless session[:customer_id] == @customer.id
             @orders = @customer.orders 
             @laundromats = @customer.laundromats
-            redirect_to customer_path(session[:customer_id])
-            return
-        end
+        #     redirect_to customer_path(session[:customer_id])
+        #     return
+        # end
+    #  byebug
     
     end
     

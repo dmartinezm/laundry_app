@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-    skip_before_action :authorized_customer, only: [:new_customer, :create_customer]            
+    # skip_before_action :authorized_customer, only: [:new_customer, :create_customer]            
 
     #skip_before_action :authorized_laundromat, only: [:new, :create]
 
