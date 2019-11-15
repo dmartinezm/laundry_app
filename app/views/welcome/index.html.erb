@@ -1,21 +1,20 @@
-<h1>Welcome to WeLaundry</h1>
-<p>Find us at WeWork dumbo</p>
-
-<%= link_to 'Customer Login', customer_login_path %>
 
 
-<style>
-body {
-  background-image: url('https://westbankdrycleaning.com/wp-content/uploads/2019/06/Laundry-768x538.jpg');
-}
-</style>
+<%# link_to 'Customer Login', customer_login_path %>
 
-<h4> Search by Zipcode</h4>
+
+<br>
+
+<div class = "searchform">
+
+<h4> Find locations by Zipcode</h4>
+<p>
 <%= form_tag(laundromats_path, method: :get) do %>
 <%= text_field_tag :zipcode, params[:zipcode] %>
 <%= submit_tag 'Search', name: nil %>
 <%end %>
-
+</p>
+</div>
 <%# form_for @laundromats do |f| %>
 <%# f.label :zipcode %>
 <%# f.text_field :zipcode %>

@@ -1,4 +1,4 @@
-<h1> Here are the laundromats around </h1>
+
 
 
 <h4> Search by Zipcode</h4>
@@ -6,11 +6,14 @@
 <%= text_field_tag(:zipcode, params[:zipcode]) %>
 <%= submit_tag "Search", name: nil %>
 <%end %>
-
-<hr>
+<br>
+<br>
+<br>
+<h2> Laundromats close by are: </h2>
 
 <% @laundromats.each do |laundromat| %>
-<li><%= link_to laundromat.name, laundromat %></li>
+<%# link_to laundromat.name, laundromat %>
+ <li><%= link_to laundromat.name, laundromat %></li>
 <% end %>
 
 

@@ -13,3 +13,72 @@
  *= require_tree .
  *= require_self
  */
+
+ /* Selector {
+    Property: value;
+} */
+
+@import 'bootstrap';
+
+
+ h1{
+     color:orangered;
+     text-shadow: 1px 1px 1px #000, 
+               3px 3px 5px blue; 
+     font: italic  40px Georgia;
+     text-align: center;
+    margin: auto;
+    width: 100%;
+ }
+
+ h4{
+    color:orangered;
+    text-shadow: 1px 1px 1px #000, 
+              3px 3px 5px blue; 
+    font: italic  40px Hel;
+   
+   margin: auto;
+   width: 100%;
+}
+
+body {
+  
+    background-image: url('https://westbankdrycleaning.com/wp-content/uploads/2019/06/Laundry-768x538.jpg');
+    background-position-y: 80px;
+    background-position-x: 65px;
+    background-repeat: ;
+    background-size: auto;
+  }
+
+  nav {
+      border: 2px solid orange;
+
+  }
+
+  img {
+      width: 100px;
+      height: 200px;
+  }
+
+  .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: right;
+
+  }
+
+  .searchform {
+      
+  }
+
+  li{
+    border: 1px solid orange;
+    background-color: white;
+      display: inline-block;
+      padding: 5px 2px 5px 2px;
+      margin: 5px;
+      
+  }
+
+  
+  
