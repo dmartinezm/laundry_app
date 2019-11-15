@@ -6,7 +6,7 @@
 <%= submit_tag "Search", name: nil %>
 <%end %>
 
-<% if @orders %>
+
 
 <section>
 <h2>Your Orders</h2>
@@ -21,7 +21,7 @@
 <%= button_to 'Cancel Order', customer_path(order.customer_id), data: {confirm: 'Are you sure you want to Cancel this order?'} %>
 </li>
 </ul>
-<% end%>
+
 
 </section>
 <% end %>

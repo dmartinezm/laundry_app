@@ -13,7 +13,7 @@ class OrdersController < ApplicationController
         # employee_id = 4
         # order_type = params[:order][:order_type]
         # loads = params[:order][:loads]
-        byebug
+        # byebug
 
         order = Order.create(order_params)
         
