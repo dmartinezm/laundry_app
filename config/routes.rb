@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
  
   root 'welcome#index'
+
   resources :orders, only:[:new, :create, :show]
   resources :employees, only: [:show]
   resources :laundromats, only: [:show,:new,:create,:index]
@@ -21,7 +22,7 @@ Rails.application.routes.draw do
 
   # get "/laundromats/search", to: "laundromats#search"
 
-  delete "/logout", to: "sessions#destroy", as: "logout"
+  delete "/logout", to: "sessions#destroy_customer", as: "logout"
   
   # post "/sessions/reset", to: "sessions#reset"
 

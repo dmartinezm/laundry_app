@@ -2,11 +2,13 @@ class CustomersController < ApplicationController
     before_action :set_customer, only: [:show]
 
     def show
-        
-        @orders = @customer.orders
-        @laundromats = @customer.laundromats
-        
-        # byebug
+        unless session[:customer_id] == @customer.id
+            @orders = @customer.orders 
+            @laundromats = @customer.laundromats
+            redirect_to customer_path(session[:customer_id])
+            return
+        end
+    
     end
     
     def new
@@ -31,7 +33,7 @@ class CustomersController < ApplicationController
 
     def set_customer
         #@customer = Customer.find(4)
-        @customer = Customer.find(params[:id])
+        @customer = Customer.find(params[:id]) 
     end
 
     def customer_params

@@ -1,11 +1,12 @@
 class LaundromatsController < ApplicationController
-    # before_action :set_laundromat, only: [:show]
+    before_action :set_laundromat, only: [:show]
+    # before_action :require_logged_in, only: [:index]
 
     def index
-        if params[:zipcode]
+        if params[:zipcode] != ''
             session[:search_results] = request.url
             @laundromats = Laundromat.where(zipcode: params[:zipcode]).order("name")
-            # byebug
+          
         else
            
             @laundromats = Laundromat.all
@@ -13,10 +14,7 @@ class LaundromatsController < ApplicationController
     end
     
     def show
-        @laundromat = Laundromat.find(params[:id])
-
         @order= Order.new
-
     end
 
     def new
@@ -39,8 +37,12 @@ class LaundromatsController < ApplicationController
 
     private
 
+    def require_logged_in
+        redirect_to customer_login_path unless @current_customer
+        # byecbug
+    end
+
     def set_laundromat
-#         @laundromat = Laundromat.find(params[:laundromat_id])
         @laundromat = Laundromat.find(params[:id])
 
     end
